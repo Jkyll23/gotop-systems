@@ -108,12 +108,17 @@
     <div id="page-home" class="page active">
 
     <!-- Hero Section -->
-    <section class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white flex items-center justify-center px-6 py-24 pt-40 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/10"></div>
+    <section class="min-h-screen text-white flex items-center justify-center px-6 py-24 pt-40 relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="grok-video-d3c0a6c6-95ca-4d30-97bc-315ab8f9aab3.mp4" type="video/mp4">
+        </video>
+        <!-- Dark overlay to keep text readable (subtle) -->
+        <div class="absolute inset-0 bg-slate-900/75 z-10"></div>
         <!-- Decorative orbs -->
-        <div class="absolute top-1/4 left-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-6xl mx-auto text-center px-6 relative z-10">
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl pointer-events-none z-10"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none z-10"></div>
+        <div class="max-w-6xl mx-auto text-center px-6 relative z-20">
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-8 drop-shadow-2xl">
                 AI That Answers<br class="hidden md:block">Your Phone 24/7
             </h1>
@@ -296,7 +301,7 @@
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-4">Email</h3>
-                        <a href="mailto:Gotopsystems@yahoo.com" class="text-xl hover:text-teal-400 transition-colors">Gotopsystems@yahoo.com</a>
+                        <a href="/cdn-cgi/l/email-protection#cf88a0bba0bfbcb6bcbbaaa2bc8fb6aea7a0a0e1aca0a2" class="text-xl hover:text-teal-400 transition-colors"><span class="__cf_email__" data-cfemail="43042c372c33303a3037262e30033a222b2c2c6d202c2e">[email&#160;protected]</span></a>
                     </div>
                 </div>
                 <form id="contact-form" class="space-y-6" onsubmit="submitForm(event)">
@@ -402,7 +407,7 @@
                             <li>The right to object to or restrict processing of your data</li>
                             <li>The right to data portability</li>
                         </ul>
-                        <p class="mt-4">To exercise these rights, please contact us at <a href="mailto:Gotopsystems@yahoo.com" class="text-teal-600 hover:underline">Gotopsystems@yahoo.com</a>.</p>
+                        <p class="mt-4">To exercise these rights, please contact us at <a href="/cdn-cgi/l/email-protection#f4b39b809b84878d8780919987b48d959c9b9bda979b99" class="text-teal-600 hover:underline"><span class="__cf_email__" data-cfemail="cc8ba3b8a3bcbfb5bfb8a9a1bf8cb5ada4a3a3e2afa3a1">[email&#160;protected]</span></a>.</p>
                     </div>
 
                     <div>
@@ -426,7 +431,7 @@
                         <div class="mt-4 p-6 bg-slate-50 rounded-2xl">
                             <p class="font-semibold text-slate-900">GoTop Systems, Inc.</p>
                             <p>Chicago, Illinois</p>
-                            <p>Email: <a href="mailto:Gotopsystems@yahoo.com" class="text-teal-600 hover:underline">Gotopsystems@yahoo.com</a></p>
+                            <p>Email: <a href="/cdn-cgi/l/email-protection#b4f3dbc0dbc4c7cdc7c0d1d9c7f4cdd5dcdbdb9ad7dbd9" class="text-teal-600 hover:underline"><span class="__cf_email__" data-cfemail="cf88a0bba0bfbcb6bcbbaaa2bc8fb6aea7a0a0e1aca0a2">[email&#160;protected]</span></a></p>
                             <p>Phone: <a href="tel:+16308959398" class="text-teal-600 hover:underline">630-895-9398</a></p>
                         </div>
                     </div>
@@ -549,7 +554,7 @@
                         <div class="mt-4 p-6 bg-slate-50 rounded-2xl">
                             <p class="font-semibold text-slate-900">GoTop Systems, Inc.</p>
                             <p>Chicago, Illinois</p>
-                            <p>Email: <a href="mailto:Gotopsystems@yahoo.com" class="text-teal-600 hover:underline">Gotopsystems@yahoo.com</a></p>
+                            <p>Email: <a href="/cdn-cgi/l/email-protection#e8af879c87989b919b9c8d859ba89189808787c68b8785" class="text-teal-600 hover:underline"><span class="__cf_email__" data-cfemail="d99eb6adb6a9aaa0aaadbcb4aa99a0b8b1b6b6f7bab6b4">[email&#160;protected]</span></a></p>
                             <p>Phone: <a href="tel:+16308959398" class="text-teal-600 hover:underline">630-895-9398</a></p>
                         </div>
                     </div>
@@ -564,7 +569,7 @@
     </div><!-- end page-terms -->
 
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Page routing
         function showPage(pageName) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -603,21 +608,4 @@
                 });
 
                 if (res.ok) {
-                    status.textContent = '✅ Message sent! We\'ll be in touch shortly.';
-                    status.className = 'text-center text-lg text-teal-400';
-                    form.reset();
-                } else {
-                    throw new Error('Server error');
-                }
-            } catch (err) {
-                status.textContent = '❌ Something went wrong. Please call us directly at 630-895-9398.';
-                status.className = 'text-center text-lg text-red-400';
-            }
-
-            status.classList.remove('hidden');
-            btn.textContent = 'Send Message';
-            btn.disabled = false;
-        }
-    </script>
-</body>
-</html>
+           
