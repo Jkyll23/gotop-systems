@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoTop Systems | AI Receptionist & Business Automation | Chicago</title>
+    <meta name="description" content="Professional AI receptionist, text automation, custom websites, and Google review tools for Chicago businesses. 24/7 reliable service.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        slate: { 900: '#0f172a', 800: '#1e293b', 700: '#334155', 100: '#f1f5f9' },
+                        indigo: { 600: '#4f46e5', 700: '#4338ca' },
+                        teal: { 500: '#14b8a6', 600: '#0d9488' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Nav scroll effect */
+        #navbar { transition: all 0.3s ease; }
+        #navbar.scrolled {
+            background: rgba(15, 23, 42, 0.97) !important;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+        }
+        .nav-link {
+            position: relative;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: #14b8a6;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .nav-link:hover { color: #fff; }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Page system */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* Mobile menu */
+        #mobile-menu { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="font-sans antialiased bg-slate-50 text-slate-900">
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/97 backdrop-blur-md px-6 py-2 shadow-xl scrolled">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" onclick="showPage('home')" class="flex items-center group cursor-pointer">
+                <img 
+  src="image (1).jpg" 
+  alt="GoTop Systems Logo" 
+  class="h-20 w-auto group-hover:scale-105 transition-transform drop-shadow-lg"
+>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#process" class="nav-link" onclick="showPage('home')">How It Works</a>
+                <a href="#services" class="nav-link" onclick="showPage('home')">Services</a>
+                <a href="#pricing" class="nav-link" onclick="showPage('home')">Pricing</a>
+                <a href="#contact" class="nav-link" onclick="showPage('home')">Sign Up</a>
+                <a href="tel:+16308959398" class="ml-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold px-6 py-3 rounded-xl text-base shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
+                    📞 630-895-9398
+                </a>
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button id="menu-btn" onclick="toggleMenu()" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-slate-900/95 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl">
+            <div class="flex flex-col gap-4">
+                <a href="#process" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">How It Works</a>
+                <a href="#services" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">Services</a>
+                <a href="#pricing" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">Pricing</a>
+                <a href="#contact" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">Sign Up</a>
+                <a href="tel:+16308959398" class="mt-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold px-6 py-3 rounded-xl text-center transition-all">
+                    📞 Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HOME PAGE ========== -->
+    <div id="page-home" class="page active">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white flex items-center justify-center px-6 py-24 pt-40 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <!-- Decorative orbs -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto text-center px-6 relative z-10">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-8 drop-shadow-2xl">
+                AI That Answers<br class="hidden md:block">Your Phone 24/7
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl font-light max-w-3xl mx-auto mb-12 leading-relaxed opacity-95">
+                Professional AI receptionist for Chicago businesses. Seamlessly book appointments, qualify leads, and provide exceptional service—around the clock.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+                <a href="tel:+16308959398" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-10 py-5 rounded-2xl text-lg shadow-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto text-center">
+                    Call Our AI Demo Now
+                </a>
+                <a href="#services" class="border-2 border-white/70 hover:border-white font-semibold px-10 py-5 rounded-2xl text-lg hover:bg-white/10 transition-all duration-300 w-full sm:w-auto text-center">
+                    View Services
+                </a>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+               <img 
+  src="Robot 12.jpg" 
+  alt="Modern AI robot receptionist handling calls" 
+  class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-2xl"
+/>
+                <div class="space-y-6 text-left lg:text-center">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6">Instant Demo Ready</h3>
+                    <div class="space-y-4 text-lg opacity-90">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-teal-500 rounded-xl flex items-center justify-center font-bold text-white text-sm mt-0.5 flex-shrink-0">✓</div>
+                            <span>24/7 Intelligent Responses</span>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-teal-500 rounded-xl flex items-center justify-center font-bold text-white text-sm mt-0.5 flex-shrink-0">✓</div>
+                            <span>Lead Capture & Booking</span>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-teal-500 rounded-xl flex items-center justify-center font-bold text-white text-sm mt-0.5 flex-shrink-0">✓</div>
+                            <span>Seamless Integrations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-24">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-900">Simple 2-Step Process</h2>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">Get up and running in minutes with zero hassle.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-16 lg:gap-24">
+            <div class="group">
+                <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-8 font-bold text-2xl shadow-xl group-hover:scale-110 transition-all duration-500">01</div>
+                <div class="bg-white rounded-3xl p-10 lg:p-12 shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group-hover:bg-slate-50">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 text-center">Quick Setup</h3>
+                    <p class="text-lg text-slate-700 leading-relaxed text-center max-w-lg mx-auto">Connect to your phone system in under 5 minutes. Customize greetings and responses with our intuitive dashboard—no developers needed.</p>
+                </div>
+            </div>
+            <div class="group">
+                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-8 font-bold text-2xl shadow-xl group-hover:scale-110 transition-all duration-500">02</div>
+                <div class="bg-white rounded-3xl p-10 lg:p-12 shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group-hover:bg-slate-50">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 text-center">Go Live Instantly</h3>
+                    <p class="text-lg text-slate-700 leading-relaxed text-center max-w-lg mx-auto">Your AI is handling calls immediately. Monitor performance, A/B test responses, and scale effortlessly as your business grows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-32 px-6 bg-slate-900/5">
+        <div class="text-center mb-24 max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-900">Comprehensive Services</h2>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">Everything you need to automate and grow.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-7xl mx-auto">
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-teal-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">📞</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 text-center">AI Receptionist</h3>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">Intelligent call handling that books appointments and captures leads 24/7.</p>
+                <a href="comprehensive-services.html" class="block w-full bg-teal-500 hover:bg-teal-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Learn More</a>
+            </div>
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-indigo-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">💬</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 text-center">AI Text Responses</h3>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">Automated replies to texts and voicemails that keep conversations moving.</p>
+                <a href="comprehensive-services.html" class="block w-full bg-indigo-500 hover:bg-indigo-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Learn More</a>
+            </div>
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-teal-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">🌐</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 text-center">Custom Websites</h3>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">High-performance sites designed to convert visitors into customers.</p>
+                <a href="comprehensive-services.html" class="block w-full bg-teal-500 hover:bg-teal-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Learn More</a>
+            </div>
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-indigo-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">⭐</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 text-center">Google Reviews</h3>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">Automated review requests to boost your online reputation effortlessly.</p>
+                <a href="comprehensive-services.html" class="block w-full bg-indigo-500 hover:bg-indigo-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-24">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-900">Why Chicago Chooses Us</h2>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">Proven results for local businesses.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="text-center group hover:-translate-y-2 transition-all duration-500">
+                <div class="w-24 h-24 bg-gradient-to-br from-teal-500 to-indigo-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl group-hover:scale-110 transition-all text-3xl">🏙️</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Local Expertise</h3>
+                <p class="text-lg text-slate-700 leading-relaxed max-w-sm mx-auto">Built by Chicagoans for Chicago businesses—understanding your market inside out.</p>
+            </div>
+            <div class="text-center group hover:-translate-y-2 transition-all duration-500">
+                <div class="w-24 h-24 bg-gradient-to-br from-indigo-500 to-teal-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl group-hover:scale-110 transition-all text-3xl">⚡</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Uptime Guaranteed</h3>
+                <p class="text-lg text-slate-700 leading-relaxed max-w-sm mx-auto">Enterprise-grade reliability with 99.99% uptime. Your AI never sleeps.</p>
+            </div>
+            <div class="text-center group hover:-translate-y-2 transition-all duration-500">
+                <div class="w-24 h-24 bg-gradient-to-br from-slate-500 to-slate-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl group-hover:scale-110 transition-all text-3xl">💰</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Cost Savings</h3>
+                <p class="text-lg text-slate-700 leading-relaxed max-w-sm mx-auto">Reduce receptionist costs by 80%+ while increasing leads and customer satisfaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-32 px-6 bg-slate-50">
+        <div class="text-center mb-24 max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6">Transparent Pricing</h2>
+            <p class="text-xl text-slate-600 leading-relaxed">No hidden fees. Scale as you grow.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-7xl mx-auto">
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-teal-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">⭐</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 text-center">Google Reviews</h3>
+                <p class="text-teal-600 font-bold text-xl text-center mb-6">$99 <span class="text-slate-400 font-normal text-base">per month</span></p>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">Automated review requests that steadily build your online reputation on Google.</p>
+                <a href="#contact" class="block w-full bg-teal-500 hover:bg-teal-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Get Started</a>
+            </div>
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-indigo-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">💬</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 text-center">AI Missed Call Text Back</h3>
+                <p class="text-indigo-600 font-bold text-xl text-center mb-6">$149 <span class="text-slate-400 font-normal text-base">per month</span></p>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">Instantly text back every missed caller so you never lose a lead again.</p>
+                <a href="#contact" class="block w-full bg-indigo-500 hover:bg-indigo-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Get Started</a>
+            </div>
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-teal-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">📞</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 text-center">AI Receptionist</h3>
+                <p class="text-teal-600 font-bold text-xl text-center mb-6">$299 <span class="text-slate-400 font-normal text-base">per month</span></p>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">Intelligent call handling that books appointments and captures leads 24/7.</p>
+                <a href="#contact" class="block w-full bg-teal-500 hover:bg-teal-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Get Started</a>
+            </div>
+            <div class="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group border border-slate-100 hover:border-indigo-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">🌐</div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 text-center">Custom Websites</h3>
+                <p class="text-indigo-600 font-bold text-xl text-center mb-6">$399 <span class="text-slate-400 font-normal text-base">per month</span></p>
+                <p class="text-slate-700 mb-10 text-center leading-relaxed">High-performance sites designed to convert visitors into paying customers.</p>
+                <a href="#contact" class="block w-full bg-indigo-500 hover:bg-indigo-600 text-white py-4 rounded-2xl font-semibold text-center transition-all group-hover:shadow-lg">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-32 px-6 bg-gradient-to-t from-slate-900 to-slate-800 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8">Get Started Today</h2>
+            <p class="text-xl lg:text-2xl mb-16 opacity-90 leading-relaxed max-w-2xl mx-auto">Ready to automate your business? Let's discuss your needs.</p>
+            <div class="grid md:grid-cols-2 gap-16 lg:gap-24 mb-20">
+                <div class="space-y-6 text-left">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Phone</h3>
+                        <a href="tel:+16308959398" class="text-3xl font-bold hover:text-teal-400 transition-colors block">630-895-9398</a>
+                        <p class="text-slate-400">Demo available now</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Email</h3>
+                        <a href="mailto:Gotopsystems@yahoo.com" class="text-xl hover:text-teal-400 transition-colors">Gotopsystems@yahoo.com</a>
+                    </div>
+                </div>
+                <form id="contact-form" class="space-y-6" onsubmit="submitForm(event)">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full px-6 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:border-teal-400 focus:ring-4 ring-teal-400/30 focus:outline-none transition-all text-lg">
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required class="w-full px-6 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:border-teal-400 focus:ring-4 ring-teal-400/30 focus:outline-none transition-all text-lg">
+                    <input type="email" name="email" placeholder="Your Email" required class="w-full px-6 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:border-teal-400 focus:ring-4 ring-teal-400/30 focus:outline-none transition-all text-lg">
+                    <textarea name="message" placeholder="Tell us about your business..." rows="4" required class="w-full px-6 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:border-teal-400 focus:ring-4 ring-teal-400/30 focus:outline-none transition-all text-lg resize-vertical"></textarea>
+                    <button type="submit" id="submit-btn" class="w-full bg-teal-500 hover:bg-teal-600 text-white py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">Send Message</button>
+                    <p id="form-status" class="text-center text-lg hidden"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16 px-6 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex items-center justify-center mb-6">
+              <img 
+  src="image (1).jpg" 
+  alt="GoTop Systems Logo" 
+  class="h-28 w-auto drop-shadow-lg"
+/>
+            </div>
+            <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">Empowering Chicago businesses with cutting-edge AI automation.</p>
+            <div class="flex flex-wrap justify-center gap-8 mb-12 text-lg font-medium text-slate-300">
+                <a href="#" onclick="showPage('privacy')" class="hover:text-teal-400 transition-colors cursor-pointer">Privacy Policy</a>
+                <a href="#" onclick="showPage('terms')" class="hover:text-teal-400 transition-colors cursor-pointer">Terms of Service</a>
+                <a href="tel:+16308959398" class="hover:text-teal-400 transition-colors">630-895-9398</a>
+            </div>
+            <p class="text-sm text-slate-500">&copy; 2026 GoTop Systems, Inc. All rights reserved. Chicago, IL.</p>
+        </div>
+    </footer>
+
+    </div><!-- end page-home -->
+
+
+    <!-- ========== PRIVACY POLICY PAGE ========== -->
+    <div id="page-privacy" class="page">
+        <div class="min-h-screen bg-slate-50">
+            <!-- Page Header -->
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white pt-32 pb-20 px-6">
+                <div class="max-w-4xl mx-auto">
+                    <button onclick="showPage('home')" class="flex items-center gap-2 text-teal-400 hover:text-teal-300 mb-8 transition-colors font-medium">
+                        ← Back to Home
+                    </button>
+                    <h1 class="text-5xl md:text-6xl font-black mb-4">Privacy Policy</h1>
+                    <p class="text-slate-400 text-lg">Last updated: January 1, 2026</p>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="max-w-4xl mx-auto px-6 py-20">
+                <div class="bg-white rounded-3xl shadow-xl p-10 lg:p-16 space-y-10 text-slate-700 leading-relaxed">
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
+                        <p>GoTop Systems, Inc. ("GoTop Systems," "we," "us," or "our") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services, including our AI receptionist platform and related automation tools.</p>
+                        <p class="mt-4">Please read this policy carefully. If you disagree with its terms, please discontinue use of our site and services.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Information We Collect</h2>
+                        <p class="mb-4"><strong>Information you provide to us:</strong> We collect information you voluntarily provide when you register for our services, fill out a contact form, or communicate with us. This may include your name, email address, phone number, business name, and billing information.</p>
+                        <p class="mb-4"><strong>Call and communication data:</strong> As part of our AI receptionist service, we may record, transcribe, and analyze calls routed through our platform. By using our services, you agree to notify callers that their calls may be recorded and processed by our AI systems.</p>
+                        <p><strong>Automatically collected data:</strong> When you visit our website, we may automatically collect certain information including your IP address, browser type, operating system, referring URLs, and pages visited. We use cookies and similar tracking technologies to improve your experience.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">3. How We Use Your Information</h2>
+                        <p class="mb-3">We use the information we collect to:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Provide, operate, and maintain our services</li>
+                            <li>Process transactions and send related information</li>
+                            <li>Respond to comments, questions, and provide customer support</li>
+                            <li>Send administrative information such as updates, security alerts, and support messages</li>
+                            <li>Improve, personalize, and expand our services</li>
+                            <li>Understand how our services are used to make them better</li>
+                            <li>Develop new products, services, features, and functionality</li>
+                            <li>Comply with legal obligations</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">4. Sharing Your Information</h2>
+                        <p class="mb-4">We do not sell your personal information to third parties. We may share your information in the following circumstances:</p>
+                        <p class="mb-4"><strong>Service providers:</strong> We may share data with third-party vendors who assist us in operating our website, conducting our business, or serving our users, subject to confidentiality agreements.</p>
+                        <p class="mb-4"><strong>Business transfers:</strong> If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</p>
+                        <p><strong>Legal requirements:</strong> We may disclose your information if required to do so by law or in response to valid legal requests by public authorities.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">5. Data Retention</h2>
+                        <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. Call recordings and transcripts are retained for a period of 90 days by default, after which they are securely deleted unless you request otherwise.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">6. Your Rights</h2>
+                        <p class="mb-4">Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>The right to access and receive a copy of your personal data</li>
+                            <li>The right to correct inaccurate personal data</li>
+                            <li>The right to request deletion of your personal data</li>
+                            <li>The right to object to or restrict processing of your data</li>
+                            <li>The right to data portability</li>
+                        </ul>
+                        <p class="mt-4">To exercise these rights, please contact us at <a href="mailto:Gotopsystems@yahoo.com" class="text-teal-600 hover:underline">Gotopsystems@yahoo.com</a>.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">7. Security</h2>
+                        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">8. Children's Privacy</h2>
+                        <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you become aware that a child has provided us with personal information, please contact us immediately.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">9. Changes to This Policy</h2>
+                        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date. We encourage you to review this policy periodically.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">10. Contact Us</h2>
+                        <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
+                        <div class="mt-4 p-6 bg-slate-50 rounded-2xl">
+                            <p class="font-semibold text-slate-900">GoTop Systems, Inc.</p>
+                            <p>Chicago, Illinois</p>
+                            <p>Email: <a href="mailto:Gotopsystems@yahoo.com" class="text-teal-600 hover:underline">Gotopsystems@yahoo.com</a></p>
+                            <p>Phone: <a href="tel:+16308959398" class="text-teal-600 hover:underline">630-895-9398</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Mini Footer -->
+            <footer class="bg-slate-900 text-white py-8 px-6 text-center">
+                <p class="text-slate-400">&copy; 2026 GoTop Systems, Inc. All rights reserved. Chicago, IL.</p>
+            </footer>
+        </div>
+    </div><!-- end page-privacy -->
+
+
+    <!-- ========== TERMS OF SERVICE PAGE ========== -->
+    <div id="page-terms" class="page">
+        <div class="min-h-screen bg-slate-50">
+            <!-- Page Header -->
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white pt-32 pb-20 px-6">
+                <div class="max-w-4xl mx-auto">
+                    <button onclick="showPage('home')" class="flex items-center gap-2 text-teal-400 hover:text-teal-300 mb-8 transition-colors font-medium">
+                        ← Back to Home
+                    </button>
+                    <h1 class="text-5xl md:text-6xl font-black mb-4">Terms of Service</h1>
+                    <p class="text-slate-400 text-lg">Last updated: January 1, 2026</p>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="max-w-4xl mx-auto px-6 py-20">
+                <div class="bg-white rounded-3xl shadow-xl p-10 lg:p-16 space-y-10 text-slate-700 leading-relaxed">
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Agreement to Terms</h2>
+                        <p>By accessing or using the services provided by GoTop Systems, Inc. ("GoTop Systems," "we," "us," or "our"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access our services. These Terms apply to all visitors, users, and others who access or use our services.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Description of Services</h2>
+                        <p class="mb-4">GoTop Systems provides AI-powered business automation services including but not limited to:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>AI Receptionist and call handling services</li>
+                            <li>Automated text and voicemail response systems</li>
+                            <li>Custom website design and development</li>
+                            <li>Google review automation and reputation management</li>
+                            <li>Business analytics and reporting dashboards</li>
+                        </ul>
+                        <p class="mt-4">We reserve the right to modify, suspend, or discontinue any part of our services at any time with reasonable notice.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">3. Account Registration</h2>
+                        <p class="mb-4">To access certain features of our services, you must register for an account. You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate. You are responsible for:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Maintaining the confidentiality of your account credentials</li>
+                            <li>All activities that occur under your account</li>
+                            <li>Notifying us immediately of any unauthorized use of your account</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">4. Payment and Billing</h2>
+                        <p class="mb-4">By subscribing to a paid plan, you agree to pay all fees in accordance with the pricing and payment terms presented to you at the time of purchase. Subscription fees are billed in advance on a monthly or annual basis.</p>
+                        <p class="mb-4"><strong>Refund Policy:</strong> Subscription fees are non-refundable except as required by law. If you cancel your subscription, you will continue to have access to the service through the end of your current billing period.</p>
+                        <p><strong>Price Changes:</strong> We reserve the right to modify our pricing at any time. We will provide at least 30 days notice before any price changes take effect for existing subscribers.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">5. Acceptable Use</h2>
+                        <p class="mb-4">You agree not to use our services to:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Violate any applicable laws or regulations</li>
+                            <li>Transmit unsolicited or unauthorized advertising or promotional material (spam)</li>
+                            <li>Impersonate any person or entity, or falsely state your affiliation with a person or entity</li>
+                            <li>Engage in any conduct that restricts or inhibits anyone's use of the services</li>
+                            <li>Attempt to gain unauthorized access to any systems or networks connected to our services</li>
+                            <li>Use the services for any illegal or fraudulent purpose</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">6. Call Recording Compliance</h2>
+                        <p>You are solely responsible for ensuring compliance with all applicable federal, state, and local laws regarding call recording and monitoring, including obtaining any required consents from callers. GoTop Systems provides tools that may record calls; however, the legal obligation to properly disclose call recording to all parties rests entirely with you as the subscriber.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">7. Intellectual Property</h2>
+                        <p class="mb-4">The GoTop Systems name, logo, website, and all related technology and content are the exclusive property of GoTop Systems, Inc. and are protected by copyright, trademark, and other intellectual property laws.</p>
+                        <p>You retain all rights to your own content and data. By using our services, you grant us a limited, non-exclusive license to use your data solely for the purpose of providing and improving our services to you.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">8. Limitation of Liability</h2>
+                        <p class="mb-4">To the maximum extent permitted by applicable law, GoTop Systems shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, use, or goodwill, arising out of or in connection with your use of our services.</p>
+                        <p>Our total liability to you for any claims arising from these Terms or your use of our services shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">9. Disclaimer of Warranties</h2>
+                        <p>Our services are provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that our services will be uninterrupted, error-free, or completely secure.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">10. Termination</h2>
+                        <p>We reserve the right to terminate or suspend your account and access to our services at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users, us, third parties, or for any other reason. You may terminate your account at any time by contacting us.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">11. Governing Law</h2>
+                        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Illinois, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the state and federal courts located in Cook County, Illinois.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">12. Changes to Terms</h2>
+                        <p>We reserve the right to modify these Terms at any time. We will notify you of significant changes by email or by posting a notice on our website at least 14 days before the changes take effect. Your continued use of our services after such notice constitutes acceptance of the updated Terms.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">13. Contact Us</h2>
+                        <p>If you have questions about these Terms of Service, please contact us:</p>
+                        <div class="mt-4 p-6 bg-slate-50 rounded-2xl">
+                            <p class="font-semibold text-slate-900">GoTop Systems, Inc.</p>
+                            <p>Chicago, Illinois</p>
+                            <p>Email: <a href="mailto:Gotopsystems@yahoo.com" class="text-teal-600 hover:underline">Gotopsystems@yahoo.com</a></p>
+                            <p>Phone: <a href="tel:+16308959398" class="text-teal-600 hover:underline">630-895-9398</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Mini Footer -->
+            <footer class="bg-slate-900 text-white py-8 px-6 text-center">
+                <p class="text-slate-400">&copy; 2026 GoTop Systems, Inc. All rights reserved. Chicago, IL.</p>
+            </footer>
+        </div>
+    </div><!-- end page-terms -->
+
+
+    <script>
+        // Page routing
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + pageName).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Contact form submission
+        async function submitForm(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const status = document.getElementById('form-status');
+            const form = document.getElementById('contact-form');
+
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            const data = {
+                name: form.name.value,
+                phone: form.phone.value,
+                email: form.email.value,
+                message: form.message.value
+            };
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    status.textContent = '✅ Message sent! We\'ll be in touch shortly.';
+                    status.className = 'text-center text-lg text-teal-400';
+                    form.reset();
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                status.textContent = '❌ Something went wrong. Please call us directly at 630-895-9398.';
+                status.className = 'text-center text-lg text-red-400';
+            }
+
+            status.classList.remove('hidden');
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+        }
+    </script>
+</body>
+</html>
