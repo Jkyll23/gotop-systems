@@ -103,6 +103,12 @@
             </div>
         </div>
     </nav>
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            var m = document.getElementById("mobile-menu");
+            m.style.display = (m.style.display === "block") ? "none" : "block";
+        });
+    </script>
 
     <!-- ========== HOME PAGE ========== -->
     <div id="page-home" class="page active">
