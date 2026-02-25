@@ -93,10 +93,10 @@
         <!-- Mobile menu -->
         <div id="mobile-menu" style="display:none;" class="mt-4 bg-slate-900/95 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl">
             <div class="flex flex-col gap-4">
-                <a href="#process" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">How It Works</a>
-                <a href="#services" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">Services</a>
-                <a href="#pricing" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">Pricing</a>
-                <a href="#contact" onclick="showPage('home'); toggleMenu()" class="nav-link text-base py-1">Sign Up</a>
+                <a href="#process" class="nav-link text-base py-1 mobile-nav-link">How It Works</a>
+                <a href="#services" class="nav-link text-base py-1 mobile-nav-link">Services</a>
+                <a href="#pricing" class="nav-link text-base py-1 mobile-nav-link">Pricing</a>
+                <a href="#contact" class="nav-link text-base py-1 mobile-nav-link">Sign Up</a>
                 <a href="tel:+16308959398" class="mt-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold px-6 py-3 rounded-xl text-center transition-all">
                     📞 Call Now
                 </a>
@@ -104,9 +104,19 @@
         </div>
     </nav>
     <script>
-        document.getElementById("menu-btn").addEventListener("click", function() {
-            var m = document.getElementById("mobile-menu");
-            m.style.display = (m.style.display === "block") ? "none" : "block";
+        var menuBtn = document.getElementById("menu-btn");
+        var mobileMenu = document.getElementById("mobile-menu");
+
+        // Open/close on hamburger tap
+        menuBtn.addEventListener("click", function() {
+            mobileMenu.style.display = (mobileMenu.style.display === "block") ? "none" : "block";
+        });
+
+        // Close menu when any nav link is tapped
+        document.querySelectorAll(".mobile-nav-link").forEach(function(link) {
+            link.addEventListener("click", function() {
+                mobileMenu.style.display = "none";
+            });
         });
     </script>
 
